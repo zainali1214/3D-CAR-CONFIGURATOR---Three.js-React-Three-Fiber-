@@ -1,0 +1,196 @@
+/* ============================================
+   CinematicIntro — Luxury Automotive Intro
+   ============================================ */
+
+.cinematic-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---- Logo ---- */
+
+.intro-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-logo-svg {
+  width: 120px;
+  height: 120px;
+  color: white;
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.3));
+  animation: logoPulse 2s ease-in-out infinite;
+  position: relative;
+  z-index: 2;
+}
+
+/* Animated gradient glow ring behind logo */
+.intro-logo-glow {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.12) 25%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.12) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: glowSpin 4s linear infinite, glowPulse 2s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes logoPulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.5));
+  }
+}
+
+@keyframes glowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: rotate(var(--r, 0deg)) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(var(--r, 0deg)) scale(1.08);
+  }
+}
+
+/* ---- Title ---- */
+
+.intro-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  overflow: hidden;
+}
+
+.intro-title-letter {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 2.5rem;
+  letter-spacing: 1.2em;
+  color: #ffffff;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* ---- Tagline ---- */
+
+.intro-tagline {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.5em;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+/* ---- Particles ---- */
+
+.intro-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.intro-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+/* ---- Fade overlay ---- */
+
+.intro-fade-overlay {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  z-index: 10;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+  .intro-logo-svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .intro-logo-glow {
+    width: 110px;
+    height: 110px;
+  }
+
+  .intro-title-letter {
+    font-size: 1.4rem;
+    letter-spacing: 0.6em;
+  }
+
+  .intro-tagline {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-logo-svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .intro-logo-glow {
+    width: 85px;
+    height: 85px;
+  }
+
+  .intro-title-letter {
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+  }
+
+  .intro-tagline {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+  }
+}
