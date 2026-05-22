@@ -68,38 +68,6 @@ A full-featured, production-grade Mercedes-Benz Maybach 3D configurator built wi
 - Node.js 16+ 
 - npm or yarn
 
-### Installation
-
-1. **Clone the repository:**
-```bash
-git clone https://github.com/yourusername/mercedes-configurator.git
-cd mercedes-configurator
-```
-
-2. **Install dependencies:**
-```bash
-npm install
-```
-
-3. **Place your Mercedes model:**
-```
-Create: public/models/
-Add your GLB file: public/models/mercedes.glb
-```
-
-4. **Start development server:**
-```bash
-npm run dev
-```
-
-The application will open at `http://localhost:3000`
-
-### Building for Production
-
-```bash
-npm run build
-npm run preview
-```
 
 ## 📁 Project Structure
 
